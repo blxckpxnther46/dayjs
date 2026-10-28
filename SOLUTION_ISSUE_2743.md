@@ -247,7 +247,7 @@ An automated audit was run across **all 143 locale definitions** in the Day.js r
 #### Full Month (`MMMM`) Audit Results:
 Across all 143 locales, there were **exactly 6 differences**, representing the exact 6 locales where December had a separate genitive format name placed at index 23 (`matchIndex = 24`):
 
-| Locale | Month Name | Month Index | Old Output (`|| matchIndex`) | New Output (`|| 12`) | Status |
+| Locale | Month Name | Month Index | Old Output (matchIndex) | New Output (Fixed: 12) | Status |
 |---|---|---|---|---|---|
 | Belarusian (`be`) | `'снежня'` | 23 (`matchIndex = 24`) | 24 (overflowed +1 year) | **12 (December)** | **Fixed** |
 | Croatian (`hr`) | `'prosinca'` | 23 (`matchIndex = 24`) | 24 (overflowed +1 year) | **12 (December)** | **Fixed** |
@@ -259,8 +259,10 @@ Across all 143 locales, there were **exactly 6 differences**, representing the e
 For **every other single month (January–November)** in these 6 locales, and for **all 12 months across all remaining 137 locales**, the old and new logic produce **100% identical outputs**.
 
 #### Short Month (`MMM`) Audit Results:
+
 Only 2 locales had separate standalone and format entries for `monthsShort`:
-| Locale | Short Month Name | Month Index | Old Output (`|| matchIndex`) | New Output (`|| 12`) | Status |
+
+| Locale | Short Month Name | Month Index | Old Output (matchIndex) | New Output (Fixed: 12) | Status |
 |---|---|---|---|---|---|
 | Belarusian (`be`) | `'снеж.'` | 23 (`matchIndex = 24`) | 24 | **12 (December)** | **Fixed** |
 | Russian (`ru`) | `'дек.'` | 23 (`matchIndex = 24`) | 24 | **12 (December)** | **Fixed** |
